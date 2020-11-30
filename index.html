@@ -40,9 +40,6 @@
           document.getElementById("worlddeath").innerHTML = jsonFormatgaOzgartirilganData.deaths;
           document.getElementById("worldrecovery").innerHTML = jsonFormatgaOzgartirilganData.recovered;
           document.getElementById("worldactive").innerHTML = jsonFormatgaOzgartirilganData.active;
-          const hour = new Date(haqiqiyData.updated).getHours();
-          const min = new Date(haqiqiyData.updated).getMinutes();
-          document.getElementById("time").innerHTML = hour + ":" + min;
        }); 
     }
   </script>
@@ -111,7 +108,7 @@
     <h3>Dunyo bo'yicha</h3>
   </div>
 
-  <div class="updated-time">Bugun soat <span id="time"></span> dagi holat</div>
+
 
   <div class="all-data">
     <div class="box">
