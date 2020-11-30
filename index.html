@@ -40,6 +40,9 @@
           document.getElementById("worlddeath").innerHTML = jsonFormatgaOzgartirilganData.deaths;
           document.getElementById("worldrecovery").innerHTML = jsonFormatgaOzgartirilganData.recovered;
           document.getElementById("worldactive").innerHTML = jsonFormatgaOzgartirilganData.active;
+          const hour = new Date(haqiqiyData.updated).getHours();
+          const min = new Date(haqiqiyData.updated).getMinutes();
+          document.getElementById("time").innerHTML = hour + ":" + min;
        }); 
     }
   </script>
@@ -48,13 +51,13 @@
 <body>
   <div class="nav">
     <div class="uzkorona">
-      <h3 style="width: 500px; font-family: 'Baloo Chettan 2'; font-size: 18px; color: grey;">O'zbekiston va Dunyoda korona virus statistikasi </h3>
+      <h3 style="width: 500px; font-family: 'Baloo Chettan 2'; font-size: 22px; color: grey;">O'zbekiston va Dunyoda korona virus statistikasi </h3>
     </div>
   </div>
 
   <div class="title">
     <h3>O'zbekiston</h3>
-    <img src="./images/uzb.PNG" />
+  
   </div>
 
   <div class="updated-time">Bugun soat <span id="time"></span> dagi holat</div>
@@ -106,10 +109,9 @@
 
   <div class="earth">
     <h3>Dunyo bo'yicha</h3>
-    <img src="https://wordassociations.net/image/600x/svg_to_png/Anonymous_northern_hemisphere_globe.png" />
   </div>
 
-  <div class="updated-time">Bugun soat 12:45 dagi holat</div>
+  <div class="updated-time">Bugun soat <span id="time"></span> dagi holat</div>
 
   <div class="all-data">
     <div class="box">
