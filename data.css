@@ -60,3 +60,11 @@
     height: 50px;
 }
 
+
+
+.footer {
+    width: auto;
+    height: 40px;
+    text-align: center;
+    font-family: 'Baloo Chettan 2' ;
+}
