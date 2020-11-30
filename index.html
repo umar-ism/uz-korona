@@ -15,12 +15,12 @@
       fetch("https://corona.lmao.ninja/v2/countries/uzbekistan")
         .then((olinganData) => olinganData.json())
         .then(haqiqiyData => {
-          document.getElementById("bugun").innerHTML = haqiqiyData.todayCases;
-          document.getElementById("kasallanganlar").innerHTML = haqiqiyData.cases;
-          document.getElementById("vafotetganlar").innerHTML = haqiqiyData.deaths;
-          document.getElementById("sogayganlar").innerHTML = haqiqiyData.recovered;
-          document.getElementById("davolanmoqda").innerHTML = haqiqiyData.active;
-          document.getElementById("bugunsogayganlar").innerHTML = haqiqiyData.todayRecovered;
+          document.getElementById("bugun").innerHTML = haqiqiyData.todayCases.toLocaleString();
+          document.getElementById("kasallanganlar").innerHTML = haqiqiyData.cases.toLocaleString();
+          document.getElementById("vafotetganlar").innerHTML = haqiqiyData.deaths.toLocaleString();
+          document.getElementById("sogayganlar").innerHTML = haqiqiyData.recovered.toLocaleString();
+          document.getElementById("davolanmoqda").innerHTML = haqiqiyData.active.toLocaleString();
+          document.getElementById("bugunsogayganlar").innerHTML = haqiqiyData.todayRecovered.toLocaleString();
           const hour = new Date(haqiqiyData.updated).getHours();
           const min = new Date(haqiqiyData.updated).getMinutes();
           document.getElementById("time").innerHTML = hour + ":" + min;
@@ -35,11 +35,11 @@
       fetch("https://corona.lmao.ninja/v2/all")
         .then(olinganData => olinganData.json())
         .then(jsonFormatgaOzgartirilganData => {
-          document.getElementById("worldcases").innerHTML = jsonFormatgaOzgartirilganData.cases;
-          document.getElementById("worldtoday").innerHTML = jsonFormatgaOzgartirilganData.todayCases;
-          document.getElementById("worlddeath").innerHTML = jsonFormatgaOzgartirilganData.deaths;
-          document.getElementById("worldrecovery").innerHTML = jsonFormatgaOzgartirilganData.recovered;
-          document.getElementById("worldactive").innerHTML = jsonFormatgaOzgartirilganData.active;
+          document.getElementById("worldcases").innerHTML = jsonFormatgaOzgartirilganData.cases.toLocaleString();
+          document.getElementById("worldtoday").innerHTML = jsonFormatgaOzgartirilganData.todayCases.toLocaleString();
+          document.getElementById("worlddeath").innerHTML = jsonFormatgaOzgartirilganData.deaths.toLocaleString();
+          document.getElementById("worldrecovery").innerHTML = jsonFormatgaOzgartirilganData.recovered.toLocaleString();
+          document.getElementById("worldactive").innerHTML = jsonFormatgaOzgartirilganData.active.toLocaleString();
        }); 
     }
   </script>
@@ -48,7 +48,7 @@
 <body>
   <div class="nav">
     <div class="uzkorona">
-      <h3 style="width: 500px; font-family: 'Baloo Chettan 2'; font-size: 22px; color: grey;">O'zbekiston va Dunyoda korona virus statistikasi </h3>
+      <h3 style="width: 500px; font-family: 'Baloo Chettan 2'; font-size: 20px;">O'zbekiston va Dunyoda korona virus statistikasi </h3>
     </div>
   </div>
 
