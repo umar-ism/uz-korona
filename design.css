@@ -1,0 +1,65 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+.nav {
+    width: auto;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 30px;
+}
+.uzkorona img {
+    width: 160px;
+    height: 70px;
+}
+.uzkorona {
+    width: 160px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+.links {
+    width: 400px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+.a {
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+    background-color: white;
+    border: 2px solid blue;
+    border-radius: 9px;
+    font-size: 18px;
+    font-family: 'Baloo Chettan 2';
+}
+.title {
+    width: 300px;
+    height: 70px;
+    display: block;
+    margin: auto;
+    font-family: 'Baloo Chettan 2';
+    font-size: 35px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 40px;
+}
+.title h3 {
+    margin: 0px;
+    color: grey;
+}
+.title img {
+    width: 70px;
+    height: 60px;
+}
+.updated-time {
+    text-align: center;
+    font-family: 'Baloo Chettan 2';
+    color: red;
+    padding-bottom: 30px;
+}

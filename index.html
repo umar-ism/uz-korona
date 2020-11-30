@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>O'zbekistonda korona virus statistikasi</title>
+  <link rel="stylesheet" href="design.css" />
+  <link rel="stylesheet" href="data.css" />
+  <link rel="stylesheet" href="cases.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+
+
+    function getUzbekistanStats() {
+      fetch("https://corona.lmao.ninja/v2/countries/uzbekistan")
+        .then((olinganData) => olinganData.json())
+        .then(haqiqiyData => {
+          document.getElementById("bugun").innerHTML = haqiqiyData.todayCases;
+          document.getElementById("kasallanganlar").innerHTML = haqiqiyData.cases;
+          document.getElementById("vafotetganlar").innerHTML = haqiqiyData.deaths;
+          document.getElementById("sogayganlar").innerHTML = haqiqiyData.recovered;
+          document.getElementById("davolanmoqda").innerHTML = haqiqiyData.active;
+          document.getElementById("bugunsogayganlar").innerHTML = haqiqiyData.todayRecovered;
+          const hour = new Date(haqiqiyData.updated).getHours();
+          const min = new Date(haqiqiyData.updated).getMinutes();
+          document.getElementById("time").innerHTML = hour + ":" + min;
+        });
+    }
+    window.onload = function () {
+      getUzbekistanStats();
+      getWorldStats();
+    };
+
+    function getWorldStats() {
+      fetch("https://corona.lmao.ninja/v2/all")
+        .then(olinganData => olinganData.json())
+        .then(jsonFormatgaOzgartirilganData => {
+          document.getElementById("worldcases").innerHTML = jsonFormatgaOzgartirilganData.cases;
+          document.getElementById("worldtoday").innerHTML = jsonFormatgaOzgartirilganData.todayCases;
+          document.getElementById("worlddeath").innerHTML = jsonFormatgaOzgartirilganData.deaths;
+          document.getElementById("worldrecovery").innerHTML = jsonFormatgaOzgartirilganData.recovered;
+          document.getElementById("worldactive").innerHTML = jsonFormatgaOzgartirilganData.active;
+       }); 
+    }
+  </script>
+</head>
+
+<body>
+  <div class="nav">
+    <div class="uzkorona">
+      <img src="./images/uzkorona.PNG" />
+    </div>
+  </div>
+
+  <div class="title">
+    <h3>O'zbekiston</h3>
+    <img src="./images/uzb.PNG" />
+  </div>
+
+  <div class="updated-time">Bugun soat <span id="time"></span> dagi holat</div>
+
+  <div class="all-data">
+    <div class="box">
+      <div class="counter" style="color: rgb(11, 141, 169)">
+        <b id="kasallanganlar"></b>
+      </div>
+      <div class="txt">KASALLANGANLAR</div>
+    </div>
+
+    <div class="box">
+      <div class="counter" style="color: rgb(220, 153, 22)">
+        <span><b>+</b></span><b id="bugun"></b>
+      </div>
+      <div class="txt">BUGUN</div>
+    </div>
+
+    <div class="box">
+      <div class="counter" style="color: rgb(203, 68, 50)">
+        <b id="vafotetganlar"></b>
+      </div>
+      <div class="txt">VAFOT ETGANLAR</div>
+    </div>
+
+    <div class="box">
+      <div class="counter" style="color: rgb(60, 123, 49)">
+        <b id="sogayganlar"></b>
+      </div>
+      <div class="txt">SOG'AYGANLAR</div>
+    </div>
+
+    <div class="box">
+      <div class="counter" style="color: rgb(60, 123, 49)">
+        <span><b>+</b></span><b id="bugunsogayganlar"></b>
+      </div>
+      <div class="txt" style="font-size: 17px">BUGUN SOG'AYGANLAR</div>
+    </div>
+
+    <div class="box">
+      <div class="counter" style="color: rgb(165, 117, 72)">
+        <b id="davolanmoqda"></b>
+      </div>
+      <div class="txt">DAVOLANMOQDA</div>
+    </div>
+  </div>
+  <hr class="line" />
+
+  <div class="earth">
+    <h3>Dunyo bo'yicha</h3>
+    <img src="https://wordassociations.net/image/600x/svg_to_png/Anonymous_northern_hemisphere_globe.png" />
+  </div>
+
+  <div class="updated-time">Bugun soat 12:45 dagi holat</div>
+
+  <div class="all-data">
+    <div class="box">
+      <div class="counter" style="color: rgb(11, 141, 169)">
+        <b id="worldcases"></b>
+      </div>
+      <div class="txt">KASALLANGANLAR</div>
+    </div>
+
+    <div class="box">
+      <div class="counter" style="color: rgb(220, 153, 22)">
+        <b id="worldtoday"></b>
+      </div>
+      <div class="txt">BUGUN</div>
+    </div>
+
+    <div class="box">
+      <div class="counter" style="color: rgb(203, 68, 50)"><b id="worlddeath"></b></div>
+      <div class="txt">VAFOT ETGANLAR</div>
+    </div>
+
+    <div class="box">
+      <div class="counter" style="color: rgb(60, 123, 49)"><b id="worldrecovery"></b></div>
+      <div class="txt">SOG'AYGANLAR</div>
+    </div>
+
+    <div class="box">
+      <div class="counter" style="color: rgb(165, 117, 72)"><b id="worldactive"></b></div>
+      <div class="txt">DAVOLANMOQDA</div>
+    </div>
+  </div>
+  <hr class="line" />
+
+
+</body>
+
+</html>
