@@ -1,12 +1,12 @@
 @media(max-width: 407px){
     body .all-data .box{
-        width: 130px;
-        height: 70px;
+        width: 160px;
+        height: 90px;
     }
     body .box .txt{
-        font-size: 12px;
+        font-size: 15px;
     }
     body .all-data .box .counter{
-        font-size: 20px;
+        font-size: 26px;
     }
 }
