@@ -6,4 +6,7 @@
     body .box .txt{
         font-size: 12px;
     }
+    body .all-data .box .counter{
+        font-size: 20px;
+    }
 }
