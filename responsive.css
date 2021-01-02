@@ -1,0 +1,6 @@
+@media(max-width: 407px){
+    body .all-data .box{
+        width: 130px;
+        height: 70px;
+    }
+}
