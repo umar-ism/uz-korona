@@ -3,4 +3,7 @@
         width: 130px;
         height: 70px;
     }
+    body .box .txt{
+        font-size: 10px;
+    }
 }
